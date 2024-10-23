@@ -4,11 +4,11 @@ import { DB_NAME } from "../constants.js";
 import dotenv from "dotenv";
 dotenv.config();
 
-const MONGODB_URI1 = "mongodb+srv://pinakss7:SAMARTHA@cluster0.vcojfb2.mongodb.net?retryWrites=true&w=majority&appName=Cluster0"
+const MONGODB_URI1 = "mongodb://atlas-sql-6623bdb4261cc77a470e6ca2-v7mdt.a.query.mongodb.net/sample_mflix?ssl=true&authSource=admin"
 const connect_DB = async () => {
   try {
     const connectionInstance = await mongoose.connect(
-      `${process.env.MONGODB_URI}/${DB_NAME}`
+      process.env.MONGODB_URI 
     );
   
     console.log("Mongodb connected " + connectionInstance.connection.host);
